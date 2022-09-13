@@ -27,7 +27,7 @@ def avg_age(age_lst):
 
     avg_patient_age = round(total_age / len(age_lst))
 
-    return "Average patient age is {age} years old.".format(age=avg_patient_age)
+    return avg_patient_age
 
 avg_age(ages)
 
