@@ -8,7 +8,7 @@ smoker = []
 regions = []
 charges = []
 
-with open('insurance.csv', newline='') as csvfile:
+with open('/Users/karlbjorkman/desktop/codecademy/portfolio_projects/medical_insurance_project/insurance.csv', 'r', newline='') as csvfile:
     med_insurance = csv.DictReader(csvfile)
     for record in med_insurance:
         ages.append(record['age'])
@@ -18,7 +18,6 @@ with open('insurance.csv', newline='') as csvfile:
         smoker.append(record['smoker'])
         regions.append(record['region'])
         charges.append(record['charges'])
-
 
 def avg_age(age_lst):
     total_age = 0
@@ -30,7 +29,7 @@ def avg_age(age_lst):
     return "Average patient age is {age} years old.".format(age=avg_patient_age)
 
 
-avg_age(ages)
+print(avg_age(ages))
 
 
 def avg_age_parent(age_lst, children_lst):
@@ -47,7 +46,7 @@ def avg_age_parent(age_lst, children_lst):
     return "Average parent age is {age} years old.".format(age=avg_parent_age)
 
 
-avg_age_parent(ages, children)
+print(avg_age_parent(ages, children))
 
 
 def parent_count(children_lst):
@@ -60,7 +59,7 @@ def parent_count(children_lst):
         all_patients=len(children_lst), parents=parents)
 
 
-parent_count(children)
+print(parent_count(children))
 
 
 def smoking_cost(smoker_lst, charges_lst):
@@ -83,7 +82,7 @@ def smoking_cost(smoker_lst, charges_lst):
     return "Avg Nonsmoker Charges: ${nonsmoker_charges} | Avg Smoker Charges: ${smoker_charges}".format(nonsmoker_charges=avg_nonsmoker_cost, smoker_charges=avg_smoker_cost)
 
 
-smoking_cost(smoker, charges)
+print(smoking_cost(smoker, charges))
 
 
 def loc_counter(region_lst):
@@ -112,4 +111,4 @@ def loc_counter(region_lst):
         sw=sw_count, se=se_count, nw=nw_count, ne=ne_count)
 
 
-loc_counter(regions)
+print(loc_counter(regions))
